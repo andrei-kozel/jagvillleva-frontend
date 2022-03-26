@@ -4,7 +4,7 @@ import React from "react";
 
 const CssButton = styled(Button)({
   boederRadius: "8px",
-  padding: "12px 0px",
+  padding: "12px 12px",
   color: "white",
 });
 
@@ -14,7 +14,7 @@ interface ButtonProps {
   disabled?: boolean;
   variant?: "outlined" | "contained";
   fullWidth?: boolean;
-  color?: "primary" | "secondary" | "inherit";
+  color?: "primary" | "secondary" | "inherit" | "error";
 }
 
 const ButtonCustom: React.FC<ButtonProps> = ({

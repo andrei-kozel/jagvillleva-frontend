@@ -1,4 +1,9 @@
+import styled from "@emotion/styled";
 import { CustomDrawer } from "../components/admin/CustomDrawer";
+
+const Container = styled("div")({
+  padding: "16px",
+});
 
 interface AdminLayoutProps {
   children: React.ReactNode;
@@ -6,12 +11,10 @@ interface AdminLayoutProps {
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   return (
-    <div>
-      <CustomDrawer>
-        {children}
-      </CustomDrawer>
-    </div>
-  )
-}
+    <Container>
+      <CustomDrawer>{children}</CustomDrawer>;
+    </Container>
+  );
+};
 
-export default AdminLayout
+export default AdminLayout;
