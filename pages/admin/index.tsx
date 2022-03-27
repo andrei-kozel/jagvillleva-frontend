@@ -1,5 +1,6 @@
 import { Grid, styled } from "@mui/material";
 import React, { ReactElement } from "react";
+import ChartDemo from "../../components/admin/Chart";
 import Card from "../../components/Card";
 import AdminLayout from "./../../layouts/AdminLayout";
 
@@ -33,6 +34,12 @@ const Index = () => {
           value={500}
           title="Total amount of pets"
         />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <ChartDemo />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <ChartDemo />
       </Grid>
     </GridContainer>
   );

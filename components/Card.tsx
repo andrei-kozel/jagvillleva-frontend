@@ -1,16 +1,13 @@
 import styled from "@emotion/styled";
 import { Icon, Typography } from "@mui/material";
 import * as colors from "@mui/material/colors";
-import { teal } from "@mui/material/colors";
 import React from "react";
 
 const IconContainer = styled("div")(({ color }) => ({
   width: "44px",
   height: "44px",
   borderRadius: "8px",
-  backgroundColor: color
-    ? colors[color as keyof typeof colors][400]
-    : teal[400],
+  backgroundColor: colors[color][400],
   marginBotton: "30px",
   display: "flex",
   justifyContent: "center",
@@ -19,7 +16,7 @@ const IconContainer = styled("div")(({ color }) => ({
 }));
 
 const CardContainer = styled("div")(({ color }) => ({
-  backgroundColor: colors[color as keyof typeof colors][300],
+  backgroundColor: colors[color][300],
   textAlign: "center",
   color: "white",
   display: "flex",
@@ -38,7 +35,7 @@ const CardContainer = styled("div")(({ color }) => ({
     width: "120px",
     height: "120px",
     borderRadius: "50%",
-    backgroundColor: colors[color as keyof typeof colors][400],
+    backgroundColor: colors[color][400],
   },
   "& ::before": {
     content: "''",
@@ -48,7 +45,7 @@ const CardContainer = styled("div")(({ color }) => ({
     width: "200px",
     height: "200px",
     borderRadius: "50%",
-    backgroundColor: colors[color as keyof typeof colors][500],
+    backgroundColor: colors[color][500],
   },
 }));
 
@@ -71,7 +68,7 @@ const Card: React.FC<CardProps> = ({ color = "teal", icon, title, value }) => {
       <Typography
         sx={{ marginTop: "-7px" }}
         variant="body2"
-        color={colors[color as keyof typeof colors][50]}
+        color={colors[color][50]}
       >
         {title}
       </Typography>
