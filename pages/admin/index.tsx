@@ -20,7 +20,7 @@ const Index = () => {
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
         <Card
-          color="yellow"
+          color="orange"
           icon="pets"
           value={500}
           title="Total amount of pets"

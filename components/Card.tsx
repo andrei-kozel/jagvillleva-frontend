@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Icon, Typography } from "@mui/material";
+import * as colors from "@mui/material/colors";
 import { teal } from "@mui/material/colors";
 import React from "react";
 
@@ -7,7 +8,9 @@ const IconContainer = styled("div")(({ color }) => ({
   width: "44px",
   height: "44px",
   borderRadius: "8px",
-  backgroundColor: `${color}[400]`,
+  backgroundColor: color
+    ? colors[color as keyof typeof colors][400]
+    : teal[400],
   marginBotton: "30px",
   display: "flex",
   justifyContent: "center",
@@ -16,7 +19,7 @@ const IconContainer = styled("div")(({ color }) => ({
 }));
 
 const CardContainer = styled("div")(({ color }) => ({
-  backgroundColor: `${color}`[300],
+  backgroundColor: colors[color as keyof typeof colors][300],
   textAlign: "center",
   color: "white",
   display: "flex",
@@ -35,7 +38,7 @@ const CardContainer = styled("div")(({ color }) => ({
     width: "120px",
     height: "120px",
     borderRadius: "50%",
-    backgroundColor: `${color}[400]`,
+    backgroundColor: colors[color as keyof typeof colors][400],
   },
   "& ::before": {
     content: "''",
@@ -45,7 +48,7 @@ const CardContainer = styled("div")(({ color }) => ({
     width: "200px",
     height: "200px",
     borderRadius: "50%",
-    backgroundColor: `${color}[500]`,
+    backgroundColor: colors[color as keyof typeof colors][500],
   },
 }));
 
@@ -56,19 +59,19 @@ interface CardProps {
   color: string;
 }
 
-const Card: React.FC<CardProps> = ({ color, icon, title, value }) => {
+const Card: React.FC<CardProps> = ({ color = "teal", icon, title, value }) => {
   return (
     <CardContainer color={color}>
       <IconContainer color={color}>
         <Icon>{icon}</Icon>
       </IconContainer>
-      <Typography variant="h4" fontWeight={500} sx={{ color: teal }}>
+      <Typography variant="h4" fontWeight={500}>
         {value}
       </Typography>
       <Typography
         sx={{ marginTop: "-7px" }}
         variant="body2"
-        color={`${color}`[50]}
+        color={colors[color as keyof typeof colors][50]}
       >
         {title}
       </Typography>
